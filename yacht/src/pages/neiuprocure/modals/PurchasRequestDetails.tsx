@@ -44,11 +44,12 @@ function PurchaseRequestDetails({ show, onHide }) {
               </tbody>
             </table>
           </div>
-          <div className="custom-footer d-flex">
+          <div className="custom-footer d-flex justify-content-center">
             <Button variant="success me-2 p-3 w-40" onClick={handleApproveClick}>Approve</Button>
             <Button variant="danger me-2 p-3 w-40">Reject</Button>
             <Button variant="secondary me-2 p-3 w-40" onClick={onHide}>Back to List</Button>
           </div>
+
         </div>
       </Modal>
 
