@@ -1,11 +1,26 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Button, Modal } from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import PurchaseOrderContractor from "./PurchaseOrderContractor";
 
-function PurchaseOrders({ show, onHide }) {
 
+interface PurchaseOrdersProps {
+  show: boolean;         // Define 'show' as a boolean
+  onHide: () => void;    // Define 'onHide' as a function with no parameters and no return value
+}
 
+const PurchaseOrders: React.FC<PurchaseOrdersProps> = ({ show, onHide }) => {
+
+ const [showPurchaseOrderContractor, setShowPurchaseOrderContractor] = useState(false);
+
+ const handleProcessClick = () =>{
+  setShowPurchaseOrderContractor(true);
+  onHide();
+ }
+
+ const handleClosePurchaseOrderContractor = () => {
+  setShowPurchaseOrderContractor(false);
+ }
 
 
   return (
@@ -19,70 +34,70 @@ function PurchaseOrders({ show, onHide }) {
         <div className="custom-container">
           <h4 className="custom-header ubuntu fw-bold">Purchase Order (Consumable)</h4>
           <div className="custom-body">
-            <label className="pop text-[#000] text-base">
+            <label className="inter text-[#000] text-base fw-bold">
               Billing Address :
             </label>
             <input style={{ backgroundColor: "#F2F2F2" }}
               type="text"
-              className="form-control p-2 mt-1  border-[#ccc] border-[2px] w-full inter text-sm text-[#000]"
+              className="form-control p-2 mt-1  border-[#ccc] border-[2px] w-full inter text-sm text-[#000] fw-bold"
               aria-describedby="date"
             />
-            <label className="pop text-[#000] text-base">
+            <label className="inter text-[#000] text-base fw-bold">
               Delivery Address :
             </label>
             <input style={{ backgroundColor: "#F2F2F2" }}
               type="text"
-              className="form-control p-2 mt-1  border-[#ccc] border-[2px] w-full inter text-sm text-[#000]"
+              className="form-control p-2 mt-1  border-[#ccc] border-[2px] w-full inter text-sm text-[#000] fw-bold"
               aria-describedby="address"
             />
-            <label className="pop text-[#000] text-base">Budget code :</label>
+            <label className="inter text-[#000] text-base fw-bold">Budget code :</label>
             <input style={{ backgroundColor: "#F2F2F2" }}
               type="text"
-              className="form-control p-2 mt-1  border-[#ccc] border-[2px] w-full inter text-sm text-[#000]"
+              className="form-control p-2 mt-1  border-[#ccc] border-[2px] w-full inter text-sm text-[#000] fw-bold"
               aria-describedby="code"
             />
-            <label className="pop text-[#000] text-base">Item List:</label>
+            <label className="inter text-[#000] text-base fw-bold">Item List:</label>
             <input style={{ backgroundColor: "#F2F2F2" }}
               type="text"
-              className="form-control p-2 mt-1 h-32 border-[#ccc] border-[2px] w-full inter text-sm text-[#000]"
+              className="form-control p-2 mt-1 h-32 border-[#ccc] border-[2px] w-full inter text-sm text-[#000] fw-bold"
               aria-describedby="list"
             />
-            <label className="pop text-[#000] text-base">VAT :</label>
+            <label className="inter text-[#000] text-base fw-bold">VAT :</label>
             <input style={{ backgroundColor: "#F2F2F2" }}
               type="text"
-              className="form-control p-2 mt-1  border-[#ccc] border-[2px] w-full inter text-sm text-[#000]"
+              className="form-control p-2 mt-1  border-[#ccc] border-[2px] w-full inter text-sm text-[#000] fw-bold"
               aria-describedby="vat"
             />
-            <label className="pop text-[#000] text-base">Freight :</label>
+            <label className="inter text-[#000] text-base fw-bold">Freight :</label>
             <input style={{ backgroundColor: "#F2F2F2" }}
               type="text"
-              className="form-control p-2 mt-1  border-[#ccc] border-[2px] w-full inter text-sm text-[#000]"
+              className="form-control p-2 mt-1  border-[#ccc] border-[2px] w-full inter text-sm text-[#000] fw-bold"
               aria-describedby="freight"
             />
-            <label className="pop text-[#000] text-base">Discount :</label>
+            <label className="inter text-[#000] text-base fw-bold">Discount :</label>
             <input style={{ backgroundColor: "#F2F2F2" }}
               type="text"
-              className="form-control p-2 mt-1  border-[#ccc] border-[2px] w-full inter text-sm text-[#000]"
+              className="form-control p-2 mt-1  border-[#ccc] border-[2px] w-full inter text-sm text-[#000] fw-bold"
               aria-describedby="discount"
             />
-            <label className="pop text-[#000] text-base">Exchange Rate:</label>
+            <label className="inter text-[#000] text-base fw-bold">Exchange Rate:</label>
             <input style={{ backgroundColor: "#F2F2F2" }}
               type="text"
-              className="form-control p-2 mt-1  border-[#ccc] border-[2px] w-full inter text-sm text-[#000]"
+              className="form-control p-2 mt-1  border-[#ccc] border-[2px] w-full inter text-sm text-[#000] fw-bold"
               aria-describedby="exchange_rate"
             />
-            <label className="pop text-[#000] text-base">
+            <label className="inter text-[#000] text-base fw-bold">
               Total in Default Currency
             </label>
             <input style={{ backgroundColor: "#F2F2F2" }}
               type="text"
-              className="form-control p-2 mt-1  border-[#ccc] border-[2px] w-full inter text-sm text-[#000]"
+              className="form-control p-2 mt-1  border-[#ccc] border-[2px] w-full inter text-sm text-[#000] fw-bold"
               aria-describedby="currency"
             />
           </div>
           <div className="custom-footer d-flex justify-content-center align-items-center gap-4">
-            <Button variant="success me-2 p-3 w-40" >Submit Request</Button>
-            <Button variant="secondary me-2 p-3 w-40" >
+            <Button variant="success me-2 p-3 w-40"onClick={handleProcessClick} >Submit Request</Button>
+            <Button variant="secondary me-2 p-3 w-40"  onClick={onHide}>
               Cancel
             </Button>
           </div>
@@ -92,7 +107,7 @@ function PurchaseOrders({ show, onHide }) {
 
       {/**Purchase order constructor component */}
       
-      <PurchaseOrderContractor  />
+      <PurchaseOrderContractor show={showPurchaseOrderContractor} onHide={handleClosePurchaseOrderContractor}  />
     </>
   );
 }

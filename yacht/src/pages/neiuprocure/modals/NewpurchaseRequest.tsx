@@ -1,13 +1,19 @@
 // NewPurchaseRequest.js
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Modal, Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../../../styles/NewPurchaseRequest.css';
 import CrewExpenseRequest from './CrewExpenseRequest';
-import { BsChevronDown } from 'react-icons/bs';
 
 
-function NewPurchaseRequest({ show, onHide }) {
+interface NewPurchaseRequestProps {
+  show: boolean;        // 'show' is a boolean
+  onHide: () => void;   // 'onHide' is a function with no parameters and no return value
+}
+
+const NewPurchaseRequest: React.FC<NewPurchaseRequestProps> = ({ show, onHide }) => {
+
+
   const [showCrewExpenseRequest, setShowCrewExpenseRequest] = useState(false);
 
 
@@ -42,9 +48,8 @@ function NewPurchaseRequest({ show, onHide }) {
       <img src="./Expand Arrow.png"
         style={{
           position: "absolute",
-          right: "1rem",
-          top: "36.5%",
           right: "10%",
+          top: "36.5%",
           transform: "translateY(-50%)",
           pointerEvents: "none",
           color: "#666", 

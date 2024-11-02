@@ -1,8 +1,14 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import { Button, Modal } from 'react-bootstrap';
 import PurchaseOrders from './PurchaseOrderConsumable';
 
-function CrewExpenseRequest({ show, onHide }) {
+interface CrewExpenseRequestProps {
+  show: boolean;        // 'show' is a boolean
+  onHide: () => void;   // 'onHide' is a function with no parameters and no return value
+}
+
+const CrewExpenseRequest: React.FC<CrewExpenseRequestProps> = ({ show, onHide }) => {
+
 
 
 
@@ -31,76 +37,73 @@ function CrewExpenseRequest({ show, onHide }) {
         <div className="custom-container">
           <h4 className="custom-header">Crew Expense Request</h4>
           <div className="custom-body" >
-            <label className="pop text-[#000] text-base">Billing Address :</label>
+            <label className="pop text-[#000] text-base fw-bold">Date :</label>
             <input style={{ backgroundColor: "#F2F2F2" }}
-              type="text"
-              className="form-control p-2 mt-1  text-white
-              border-[#ccc] border-[2px] w-full inter text-sm"
+              type="date" placeholder='dd/mm/yyyy'
+              className="form-control p-2 mt-1  text-black
+              border-[#ccc] border-[2px] w-full inter text-sm fw-bold"
               aria-describedby="date"
             />
-
-
-
-            <label className="pop text-[#000] text-base">Supplier :</label>
+            <label className="inter text-[#000] text-base fw-bold">Supplier :</label>
             <input style={{ backgroundColor: "#F2F2F2" }}
               type="text"
-              className="form-control p-2 mt-1  border-[#ccc] border-[2px] w-full inter text-sm text-[#000]"
+              className="form-control p-2 mt-1  border-[#ccc] border-[2px] w-full inter text-sm text-[#000] fw-bold"
               aria-describedby="date"
               
             />
-            <label className="pop text-[#000] text-base">Description :</label>
+            <label className="inter text-[#000] text-base fw-bold">Description :</label>
             <input style={{ backgroundColor: "#F2F2F2" }}
               type="text"
-              className="form-control p-2 mt-1  border-[#ccc] border-[2px] w-full inter text-sm text-[#000]"
+              className="form-control p-2 mt-1  border-[#ccc] border-[2px] w-full inter text-sm text-[#000] fw-bold"
               aria-describedby="date"
               
             />
-            <label className="pop text-[#000] text-base">Budghet Code (Name):</label>
+            <label className="inter text-[#000] text-base fw-bold">Budghet Code (Name):</label>
             <input style={{ backgroundColor: "#F2F2F2" }}
               type="text"
-              className="form-control p-2 mt-1  border-[#ccc] border-[2px] w-full inter text-sm text-[#000]"
+              className="form-control p-2 mt-1  border-[#ccc] border-[2px] w-full inter text-sm text-[#000] fw-bold"
               aria-describedby="date"
               
             />
-            <label className="pop text-[#000] text-base">Budget Number :</label>
+            <label className="inter text-[#000] text-base fw-bold">Budget Number :</label>
             <input style={{ backgroundColor: "#F2F2F2" }}
               type="text"
-              className="form-control p-2 mt-1  border-[#ccc] border-[2px] w-full inter text-sm text-[#000]"
+              className="form-control p-2 mt-1  border-[#ccc] border-[2px] w-full inter text-sm text-[#000] fw-bold"
               aria-describedby="date"
               
             />
-            <label className="pop text-[#000] text-base">Receipt Amount :</label>
+            <label className="inter text-[#000] text-base fw-bold">Receipt Amount :</label>
             <input style={{ backgroundColor: "#F2F2F2" }}
               type="text"
-              className="form-control p-2 mt-1  border-[#ccc] border-[2px] w-full inter text-sm text-[#000]"
+              className="form-control p-2 mt-1  border-[#ccc] border-[2px] w-full inter text-sm text-[#000] fw-bold"
               aria-describedby="date"
               
             />
-            <label className="pop text-[#000] text-base">Currency :</label>
+            <label className="inter text-[#000] text-base fw-bold">Currency :</label>
             <input style={{ backgroundColor: "#F2F2F2" }}
               type="text"
-              className="form-control p-2 mt-1  border-[#ccc] border-[2px] w-full inter text-sm text-[#000]"
+              className="form-control p-2 mt-1  border-[#ccc] border-[2px] w-full inter text-sm text-[#000] fw-bold"
               aria-describedby="date"
               
             />
-            <label className="pop text-[#000] text-base">Exchange Rate:</label>
+            <label className="inter text-[#000] text-base fw-bold">Exchange Rate:</label>
             <input style={{ backgroundColor: "#F2F2F2" }}
               type="text"
-              className="form-control p-2 mt-1  border-[#ccc] border-[2px] w-full inter text-sm text-[#000]"
+              className="form-control p-2 mt-1  border-[#ccc] border-[2px] w-full inter text-sm text-[#000] fw-bold"
               aria-describedby="date"
               
             />
-            <label className="pop text-[#000] text-base">Total in Default Currency</label>
+            <label className="inter text-[#000] text-base fw-bold">Total in Default Currency</label>
             <input style={{ backgroundColor: "#F2F2F2" }}
               type="text"
-              className="form-control p-2 mt-1  border-[#ccc] border-[2px] w-full inter text-sm text-[#000]"
+              className="form-control p-2 mt-1  border-[#ccc] border-[2px] w-full inter text-sm text-[#000] fw-bold"
               aria-describedby="date"
              
             />
-            <label className="pop text-[#000] text-base">Upload Receipt</label>
+            <label className="inter text-[#000] text-base fw-bold">Upload Receipt</label>
             <input style={{ backgroundColor: "#F2F2F2" }}
               type="file"
-              className="form-control p-2 mt-1  border-[#ccc] border-[2px] w-full inter text-sm text-[#000]"
+              className="form-control p-2 mt-1  border-[#ccc] border-[2px] w-full inter text-sm text-[#000] fw-bold"
               aria-describedby="file"
               
             />

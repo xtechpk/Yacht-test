@@ -1,10 +1,25 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Button, Modal } from 'react-bootstrap'
+import SupplierDocUpload from './SupplierDocUpload';
 
 
-function PurchaseOrderEmergency({show , onHide}) {
+interface PurchaseOrderEmergencyProps {
+  show: boolean;         // 'show' is a boolean
+  onHide: () => void;    // 'onHide' is a function with no parameters and no return value
+}
 
+const PurchaseOrderEmergency: React.FC<PurchaseOrderEmergencyProps> = ({ show, onHide }) => {
 
+  const [showSupplierDocUpload, setShowSupplierDocUpload] = useState(false);
+
+  const handleProcessClick = () => {
+    setShowSupplierDocUpload(true); 
+    onHide(); 
+  };
+
+  const handleCloseSupplierDocUpload = () => {
+    setShowSupplierDocUpload(false); 
+  };
 
 
 
@@ -19,114 +34,114 @@ function PurchaseOrderEmergency({show , onHide}) {
             <div className="custom-container">
                 <h4 className='custom-header ubuntu fw-bold'>Purchase Medical (Emergency/Medical)</h4>
                 <div className='custom-body'>
-                  <label className="pop text-[#000] text-base">
+                  <label className="inter fw-bold text-[#000] text-base">
                     Billing Address :
                   </label>
                   <input
                     style={{ backgroundColor: "#F2F2F2" }}
                     type="text"
-                    className="form-control p-2 mt-1  border-[#ccc] border-[2px] w-full inter text-sm text-[#000]"
+                    className="form-control p-2 mt-1  border-[#ccc] border-[2px] w-full inter text-sm text-[#000] fw-bold"
                     aria-describedby="address"
                   />
-                  <label className="pop text-[#000] text-base">
+                  <label className="inter fw-bold text-[#000] text-base">
                     Delivery Address :
                   </label>
                   <input
                     style={{ backgroundColor: "#F2F2F2" }}
                     type="text"
-                    className="form-control p-2 mt-1  border-[#ccc] border-[2px] w-full inter text-sm text-[#000]"
+                    className="form-control p-2 mt-1  border-[#ccc] border-[2px] w-full inter text-sm text-[#000] fw-bold"
                     aria-describedby="address"
                   />
-                  <label className="pop text-[#000] text-base">
+                  <label className="inter fw-bold text-[#000] text-base">
                     Supplier :
                   </label>
                   <input
                     style={{ backgroundColor: "#F2F2F2" }}
                     type="text"
-                    className="form-control p-2 mt-1  border-[#ccc] border-[2px] w-full inter text-sm text-[#000]"
+                    className="form-control p-2 mt-1  border-[#ccc] border-[2px] w-full inter text-sm text-[#000] fw-bold"
                     aria-describedby="address"
                   />
-                  <label className="pop text-[#000] text-base">
+                  <label className="inter fw-bold text-[#000] text-base">
                     Budget Code :
                   </label>
                   <input
                     style={{ backgroundColor: "#F2F2F2" }}
                     type="text"
-                    className="form-control p-2 mt-1  border-[#ccc] border-[2px] w-full inter text-sm text-[#000]"
+                    className="form-control p-2 mt-1  border-[#ccc] border-[2px] w-full inter text-sm text-[#000] fw-bold"
                     aria-describedby="address"
                   />
-                  <label className="pop text-[#000] text-base">
+                  <label className="inter fw-bold text-[#000] text-base">
                     Item List (Emergency/Medical) :
                   </label>
                   <input
                     style={{ backgroundColor: "#F2F2F2" }}
                     type="text"
-                    className="form-control p-2 mt-1  border-[#ccc] border-[2px] w-full inter text-sm text-[#000]"
+                    className="form-control p-2 mt-1  border-[#ccc] border-[2px] w-full inter text-sm text-[#000] fw-bold"
                     aria-describedby="address"
                   />
-                  <label className="pop text-[#000] text-base">
+                  <label className="inter fw-bold text-[#000] text-base">
                     VAT :
                   </label>
                   <input
                     style={{ backgroundColor: "#F2F2F2" }}
                     type="text"
-                    className="form-control p-2 mt-1  border-[#ccc] border-[2px] w-full inter text-sm text-[#000]"
+                    className="form-control p-2 mt-1  border-[#ccc] border-[2px] w-full inter text-sm text-[#000] fw-bold"
                     aria-describedby="address"
                   />
-                  <label className="pop text-[#000] text-base">
+                  <label className="inter text-[#000] text-base fw-bold">
                     Freight :
                   </label>
                   <input
                     style={{ backgroundColor: "#F2F2F2" }}
                     type="text"
-                    className="form-control p-2 mt-1  border-[#ccc] border-[2px] w-full inter text-sm text-[#000]"
+                    className="form-control p-2 mt-1  border-[#ccc] border-[2px] w-full inter text-sm text-[#000] fw-bold"
                     aria-describedby="address"
                   />
-                  <label className="pop text-[#000] text-base">
+                  <label className="inter fw-bold text-[#000] text-base">
                     Discount :
                   </label>
                   <input
                     style={{ backgroundColor: "#F2F2F2" }}
                     type="text"
-                    className="form-control p-2 mt-1  border-[#ccc] border-[2px] w-full inter text-sm text-[#000]"
+                    className="form-control p-2 mt-1  border-[#ccc] border-[2px] w-full inter text-sm text-[#000] fw-bold"
                     aria-describedby="address"
                   />
-                  <label className="pop text-[#000] text-base">
+                  <label className="inter fw-bold text-[#000] text-base">
                     Urgency Level :
                   </label>
                   <input
                     style={{ backgroundColor: "#F2F2F2" }}
                     type="text"
-                    className="form-control p-2 mt-1  border-[#ccc] border-[2px] w-full inter text-sm text-[#000]"
+                    className="form-control p-2 mt-1  border-[#ccc] border-[2px] w-full inter text-sm text-[#000] fw-bold"
                     aria-describedby="address"
                   />
-                  <label className="pop text-[#000] text-base">
+                  <label className="inter fw-bold text-[#000] text-base">
                     Emergency/Medical Description :
                   </label>
                   <input
                     style={{ backgroundColor: "#F2F2F2" }}
                     type="text"
-                    className="form-control p-2 mt-1  border-[#ccc] border-[2px] w-full inter text-sm text-[#000]"
+                    className="form-control p-2 mt-1  border-[#ccc] border-[2px] w-full inter text-sm text-[#000] fw-bold"
                     aria-describedby="address"
                   />
-                  <label className="pop text-[#000] text-base">
+                  <label className="inter fw-bold text-[#000] text-base">
                     Pre-Approval from Medical :
                   </label>
                   <input
                     style={{ backgroundColor: "#F2F2F2" }}
                     type="text"
-                    className="form-control p-2 mt-1 h-30 border-[#ccc] border-[2px] w-full inter text-sm text-[#000]"
+                    className="form-control p-2 mt-1 h-30 border-[#ccc] border-[2px] w-full inter text-sm text-[#000] fw-bold"
                     aria-describedby="address"
                   />
                 </div>
                 <div className="custom-footer d-flex justify-content-center items-center mt-4 gap-8">
-            <Button variant="success me-2 p-3 w-40" >Proceed</Button>
-            <Button variant="secondary me-2 p-3 w-40" >Back to List</Button>
+            <Button variant="success me-2 p-3 w-40" onClick={handleProcessClick}>Proceed</Button>
+            <Button variant="secondary me-2 p-3 w-40" onClick={onHide}>Back to List</Button>
           </div>
             </div>
         </Modal>
 
-
+      <SupplierDocUpload show={showSupplierDocUpload} onHide={handleCloseSupplierDocUpload} />
     </>
   )
 }
