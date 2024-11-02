@@ -24,29 +24,38 @@ function PurchaseRequestDetails({ show, onHide }) {
           <div className="custom-header d-flex justify-content-between align-items-center">
             <h4 className='ubuntu text-center align-middle'>Purchase Request Details</h4>
           </div>
-          <div className="custom-body">
-            <table className="table">
-              <tbody>
-                <tr><td>Request Type:</td><td>Purchase Order (Consumables)</td></tr>
-                <tr><td>Status:</td><td>Pending Approval</td></tr>
-                <tr><td>Date Submitted:</td><td>2024-08-17</td></tr>
-                <tr><td>Requester:</td><td>Jane Smith</td></tr>
-                <tr><td>Supplier:</td><td>ABC Supplies</td></tr>
-                <tr><td>Budget Code:</td><td>Operations-2024</td></tr>
-                <tr><td>Items Requested:</td><td>
-                  <ul>
-                    <li>Item 1: 10x Wrench - $50</li>
-                    <li>Item 2: 5x Screwdriver Set - $25</li>
+          <div className="custom-body" style={{ backgroundColor: "#D9D9D9" }} >
+            <table className="table" >
+              <tbody >
+                <tr >
+                  <td style={{ backgroundColor: "#D9D9D9" }}>Request Type:</td>
+                  <td style={{ backgroundColor: "#D9D9D9" }}>Purchase Order (Consumables)</td>
+                </tr>
+                <tr>
+                  <td style={{ backgroundColor: "#D9D9D9" }}>Status:</td><td style={{ backgroundColor: "#D9D9D9" }}>Pending Approval</td>
+                </tr>
+                <tr>
+                  <td style={{ backgroundColor: "#D9D9D9" }}>Date Submitted:</td><td style={{ backgroundColor: "#D9D9D9" }}>2024-08-17</td>
+                </tr>
+                <tr>
+                  <td style={{ backgroundColor: "#D9D9D9" }}>Requester:</td><td style={{ backgroundColor: "#D9D9D9" }}>Jane Smith</td>
+                </tr>
+                <tr><td style={{ backgroundColor: "#D9D9D9" }}>Supplier:</td><td style={{ backgroundColor: "#D9D9D9" }}>ABC Supplies</td></tr>
+                <tr><td style={{ backgroundColor: "#D9D9D9" }}>Budget Code:</td><td style={{ backgroundColor: "#D9D9D9" }}>Operations-2024</td></tr>
+                <tr><td style={{ backgroundColor: "#D9D9D9" }}>Items Requested:</td><td style={{ backgroundColor: "#D9D9D9" }} >
+                 <ul >
+                    <li >Item 1: 10x Wrench - $50</li>
+                    <li >Item 2: 5x Screwdriver Set - $25</li>
                   </ul>
                 </td></tr>
-                <tr><td>Total Amount:</td><td>$75</td></tr>
-                <tr><td>Additional Notes:</td><td>Urgent delivery required by end of the week.</td></tr>
+                <tr><td style={{ backgroundColor: "#D9D9D9" }}>Total Amount:</td><td style={{ backgroundColor: "#D9D9D9" }}>$75</td></tr>
+                <tr><td style={{ backgroundColor: "#D9D9D9" }}>Additional Notes:</td><td style={{ backgroundColor: "#D9D9D9" }}>Urgent delivery required by end of the week.</td></tr>
               </tbody>
             </table>
           </div>
-          <div className="custom-footer d-flex justify-content-center">
-            <Button variant="success me-2 p-3 w-40" onClick={handleApproveClick}>Approve</Button>
-            <Button variant="danger me-2 p-3 w-40">Reject</Button>
+          <div className="custom-footer d-flex justify-content-center items-center mt-4 gap-8">
+            <Button variant="success me-2 p-3 w-40" onClick={handleApproveClick}>Approved</Button>
+            <Button variant="success me-2 p-3 w-40" >Reject</Button>
             <Button variant="secondary me-2 p-3 w-40" onClick={onHide}>Back to List</Button>
           </div>
 
