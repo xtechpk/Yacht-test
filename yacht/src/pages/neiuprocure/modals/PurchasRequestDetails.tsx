@@ -60,9 +60,9 @@ const PurchaseRequestDetails: React.FC<PurchaseRequestDetailsProps> = ({ show, o
             </table>
           </div>
           <div className="custom-footer d-flex justify-content-center items-center mt-4 gap-8">
-            <Button variant="success me-2 p-3 w-40" onClick={handleApproveClick}>Approve</Button>
-            <Button variant="danger me-2 p-3 w-40" >Reject</Button>
-            <Button variant="secondary me-2 p-3 w-40" onClick={onHide}>Back to List</Button>
+            <Button variant="inter fw-bold me-2 p-3 w-40" onClick={handleApproveClick} style={{backgroundColor:"#238600" , color: "#fff"}}>Approve</Button>
+            <Button variant="danger me-2 p-3 w-40" style={{ backgroundColor: "#6B6C6B", color: "#fff" }}>Reject</Button>
+            <Button variant="inter fw-bold  me-2 p-3 w-40" onClick={onHide} style={{backgroundColor:"#860000" , color: "#fff"}}>Back to List</Button>
           </div>
 
         </div>

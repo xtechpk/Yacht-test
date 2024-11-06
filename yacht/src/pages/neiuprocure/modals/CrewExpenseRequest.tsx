@@ -109,8 +109,8 @@ const CrewExpenseRequest: React.FC<CrewExpenseRequestProps> = ({ show, onHide })
             />
           </div>
           <div className="custom-footer d-flex justify-content-center align-items-center gap-4">
-            <Button variant="success me-2 p-3 w-40" onClick={handleProceedClick}>Submit Request</Button>
-            <Button variant="secondary me-2 p-3 w-40" onClick={onHide}>
+            <Button variant=" me-2 p-3 w-40 inter fw-bold" onClick={handleProceedClick} style={{backgroundColor:"#238600" , color: "#fff"}}>Submit Request</Button>
+            <Button variant=" me-2 p-3 w-40 inter fw-bold" onClick={onHide} style={{backgroundColor:"#860000" , color: "#fff"}}>
               Cancel
             </Button>
           </div>

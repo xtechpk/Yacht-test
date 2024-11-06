@@ -57,8 +57,8 @@ const NewPurchaseRequest: React.FC<NewPurchaseRequestProps> = ({ show, onHide })
       />
           </div>
           <div className="custom-footer d-flex justify-content-center items-center mt-4 gap-8">
-            <Button variant="success me-2 p-3 w-40" onClick={handleProceedClick}>Proceed</Button>
-            <Button variant="secondary me-2 p-3 w-40" onClick={onHide}>Back to List</Button>
+            <Button variant="inter fw-bold me-2 p-3 w-40" onClick={handleProceedClick} style={{backgroundColor:"#238600" , color: "#fff"}}>Proceed</Button>
+            <Button variant="inter fw-bold me-2 p-3 w-40" onClick={onHide} style={{backgroundColor:"#860000" , color: "#fff"}}>Back to List</Button>
           </div>
 
         </div>

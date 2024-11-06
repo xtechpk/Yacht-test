@@ -121,7 +121,7 @@ const PurchaseOrderEmergency: React.FC<PurchaseOrderEmergencyProps> = ({ show, o
                   <input
                     style={{ backgroundColor: "#F2F2F2" }}
                     type="text"
-                    className="form-control p-2 mt-1  border-[#ccc] border-[2px] w-full inter text-sm text-[#000] fw-bold"
+                    className="form-control p-2 mt-1 h-28 border-[#ccc] border-[2px] w-full inter text-sm text-[#000] fw-bold"
                     aria-describedby="address"
                   />
                   <label className="inter fw-bold text-[#000] text-base">
@@ -135,8 +135,8 @@ const PurchaseOrderEmergency: React.FC<PurchaseOrderEmergencyProps> = ({ show, o
                   />
                 </div>
                 <div className="custom-footer d-flex justify-content-center items-center mt-4 gap-8">
-            <Button variant="success me-2 p-3 w-40" onClick={handleProcessClick}>Proceed</Button>
-            <Button variant="secondary me-2 p-3 w-40" onClick={onHide}>Back to List</Button>
+            <Button variant="inter fw-bold me-2 p-3 w-40" onClick={handleProcessClick} style={{backgroundColor:"#238600" , color: "#fff"}}>Proceed</Button>
+            <Button variant="inter fw-bold me-2 p-3 w-40" onClick={onHide} style={{backgroundColor:"#860000" , color: "#fff"}}>Back to List</Button>
           </div>
             </div>
         </Modal>

@@ -2,7 +2,18 @@
 
 function NieuMatrix() {
   return (
-    <div>NieuMatrix</div>
+    <>
+    <div className="container">
+      <div className="row">
+        <div className="col">
+          <h3>good evening</h3>
+        </div>
+      </div>
+    </div>
+        
+      
+    
+    </>
   )
 }
 

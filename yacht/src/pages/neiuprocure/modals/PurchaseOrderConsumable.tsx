@@ -96,8 +96,8 @@ const PurchaseOrders: React.FC<PurchaseOrdersProps> = ({ show, onHide }) => {
             />
           </div>
           <div className="custom-footer d-flex justify-content-center align-items-center gap-4">
-            <Button variant="success me-2 p-3 w-40"onClick={handleProcessClick} >Submit Request</Button>
-            <Button variant="secondary me-2 p-3 w-40"  onClick={onHide}>
+            <Button variant="inter fw-bold me-2 p-3 w-40"onClick={handleProcessClick} style={{backgroundColor:"#238600" , color: "#fff"}}>Submit Request</Button>
+            <Button variant="inter fw-bold me-2 p-3 w-40"  onClick={onHide} style={{backgroundColor:"#860000" , color: "#fff"}}>
               Cancel
             </Button>
           </div>

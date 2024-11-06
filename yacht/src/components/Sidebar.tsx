@@ -23,22 +23,22 @@ function Sidebar() {
         <ul className="flex-column mb-auto px-2">
           <li className="flex items-center space-x-4 mb-1">
             <Link
-              to="/NEIUDASH"
+              to="/NIEUUDASH"
               className={`flex items-center ${location.pathname === "/NEIUDASH" ? "active-link" : ""}`}
               style={{ display: 'flex', alignItems: 'center', padding: '10px', borderRadius: '10px' }}
             >
               <img src="./home.png" alt="home" className="w-8 h-7.5 me-2" />
-              <h5 className="text-white font-medium font-open-sans mb-0">NEIUDASH</h5> 
+              <h5 className="text-white font-medium font-open-sans mb-0">NIEUUDASH</h5> 
             </Link>
           </li>
           <li className="flex items-center space-x-4 mb-1">
             <Link
-              to="/NEIUPROCURE"
+              to="/NIEUPROCURE"
               className={`flex items-center ${location.pathname === "/NEIUPROCURE" ? "active-link" : ""}`}
               style={{ display: 'flex', alignItems: 'center', padding: '10px', borderRadius: '10px' }}
             >
               <img src="./Shopping Cart.png" alt="procure" className="w-8 h-7.5 me-2" />
-              <h5 className="text-white font-medium font-open-sans mb-0">NEIUPROCURE</h5>
+              <h5 className="text-white font-medium font-open-sans mb-0">NIEUPROCURE</h5>
             </Link>
           </li>
           <li className="flex items-center space-x-4 mb-1">

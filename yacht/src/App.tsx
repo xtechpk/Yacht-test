@@ -1,10 +1,10 @@
-import React from 'react';
+
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Sidebar from './components/Sidebar';
 import Header from './components/Header'; // Example page component
 import Dashboard from './pages/neiudash/Dashboard';
-import Neiuprocure from './pages/neiuprocure/Neiuprocure';
+import Neiuprocure from './pages/neiuprocure/Nieuprocure';
 import NieuStock from './pages/nieustock/NieuStock';
 import NieuMatrix from './pages/nieumatrix/NieuMatrix';
 import NieuSet from './pages/nieuset/NieuSet';
@@ -31,8 +31,8 @@ function App() {
           <div className="p-4 bg-[#D9D9D9]">
             <Routes>
               <Route path="/" element={<Dashboard />} />
-              <Route path="NEIUDASH" element={<Dashboard />} />
-              <Route path="/NEIUPROCURE" element={<Neiuprocure />} />
+              <Route path="NIEUDASH" element={<Dashboard />} />
+              <Route path="/NIEUPROCURE" element={<Neiuprocure />} />
               <Route path="/NIEUSTOCK" element={< NieuStock/>} />
               <Route path="/NIEUMATRIX" element={<NieuMatrix />} />
               <Route path="/NIEUSET" element={<NieuSet/>} />
