@@ -16,7 +16,7 @@ function NieuStock() {
   return (
     <>
       <div className="container-fluid min-vh-100">
-        <h3 className="mb-4 text-black">NIEUPROCURE</h3>
+        <h3 className="mb-4 text-black">NIEUSTOCK</h3>
         <div className="container-fluid text-center mt-4">
           <div className="row g-xxl-4 mb-4 gap-20 p-1">
             {/* Card Section */}

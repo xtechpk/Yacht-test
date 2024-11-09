@@ -1,8 +1,8 @@
-
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Sidebar from './components/Sidebar';
-import Header from './components/Header'; // Example page component
+import Header from './components/Header';
 import Dashboard from './pages/neiudash/Dashboard';
 import Neiuprocure from './pages/neiuprocure/Nieuprocure';
 import NieuStock from './pages/nieustock/NieuStock';
@@ -22,20 +22,41 @@ import NieuCal from './pages/nieucal/NieuCal';
 import NieuFinance from './pages/nieufinance/NieuFinance';
 
 function App() {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const handleSidebarToggle = (isOpen: boolean) => {
+    setIsSidebarOpen(isOpen);
+  };
+
   return (
     <Router>
       <div className="d-flex bg-blue-500">
-        <Sidebar />
-        <div className="flex-grow-1" style={{ marginLeft: '290px' }}>
+        {/* Sidebar component */}
+        <Sidebar onSidebarToggle={handleSidebarToggle} />
+
+        <div
+          className="flex-grow-1"
+          style={{
+            marginLeft: isSidebarOpen ? '290px' : '70px',
+            transition: 'margin-left 0.3s',
+          }}
+        >
           <Header />
-          <div className="p-4 bg-[#D9D9D9]">
+
+          <div
+            className="p-4"
+            style={{
+              backgroundColor: '#D9D9D9',
+              transition: 'margin-left 0.3s',
+            }}
+          >
             <Routes>
               <Route path="/" element={<Dashboard />} />
               <Route path="NIEUDASH" element={<Dashboard />} />
               <Route path="/NIEUPROCURE" element={<Neiuprocure />} />
-              <Route path="/NIEUSTOCK" element={< NieuStock/>} />
+              <Route path="/NIEUSTOCK" element={<NieuStock />} />
               <Route path="/NIEUMATRIX" element={<NieuMatrix />} />
-              <Route path="/NIEUSET" element={<NieuSet/>} />
+              <Route path="/NIEUSET" element={<NieuSet />} />
               <Route path="/NIEUMANAGE" element={<NieuManage />} />
               <Route path="/NIEUADMIN" element={<NieuAdmin />} />
               <Route path="/NIEUCOMS" element={<NieuComs />} />
@@ -47,8 +68,7 @@ function App() {
               <Route path="/NIEUZONE_ADVANCE" element={<NieuZoneAdvance />} />
               <Route path="/NIEUTEMPLATE" element={<NieuTemplate />} />
               <Route path="/NIEUCAL" element={<NieuCal />} />
-              <Route path="/NIEUFINACE" element={<NieuFinance />} />
-
+              <Route path="/NIEUFINANCE" element={<NieuFinance />} />
             </Routes>
           </div>
         </div>

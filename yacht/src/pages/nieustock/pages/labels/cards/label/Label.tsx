@@ -49,7 +49,7 @@ const Label = () => {
             rowData={rowData}
             columnDefs={columnDefs}
             pagination={true}
-            paginationPageSize={10}
+            paginationPageSize={5}
             onGridReady={(params) => params.api.sizeColumnsToFit()}
           />
         )}

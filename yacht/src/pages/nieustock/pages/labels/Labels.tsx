@@ -14,7 +14,7 @@ interface SummaryData {
   labelsByCategory: number;
 }
 
-function NieuStock() {
+function LabCards() {
   const [activeCard, setActiveCard] = useState<string>("Label");
   const [summaryData, setSummaryData] = useState<SummaryData | null>(null); // The type is either SummaryData or null initially
   const [loading, setLoading] = useState<boolean>(true);
@@ -148,5 +148,5 @@ function NieuStock() {
 }
 
 export default function App() {
-  return <NieuStock />;
+  return <LabCards />;
 }
