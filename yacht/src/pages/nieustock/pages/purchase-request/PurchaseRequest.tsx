@@ -65,35 +65,37 @@ function PurchaseRequest() {
 
   return (
     <>
-      <div className="container mt-4 z-1 rounded shadow min-vh-100">
-        <div className="container text-center my-4">
-          <div className="row g-2 g-lg-3">
-            <div className="col">
-              <div className="bg-light text-start p-4 rounded shadow-sm">
+
+        <div className="container-fluid">
+          <div className="row gap-8 px-5">
+            <div className="col flex flex-col w-10/12 h-32 m-2 p-6  rounded-lg cursor-pointer transition-all duration-300 
+                shadow-lg hover:shadow-xl transform hover:scale-105 bg-white text-start inter text-lg font-semibold">
                 Total Requests <br />
-                <strong>{summaryData.totalCategories}</strong>
+                <strong className="mt-1">{summaryData.totalCategories}</strong>
               </div>
-            </div>
-            <div className="col">
-              <div className="bg-light text-start p-4 rounded shadow-sm">
+            <div className="col flex flex-col w-10/12 h-32 m-2 p-6  rounded-lg cursor-pointer transition-all duration-300 
+                shadow-lg hover:shadow-xl transform hover:scale-105 bg-white text-start inter text-lg font-semibold">
                 Pending Requests <br />
-                <strong>{summaryData.topCategoriesStock}%</strong>
+                <strong className="mt-1">{summaryData.topCategoriesStock}%</strong>
               </div>
-            </div>
-            <div className="col">
-              <div className="bg-light text-start p-4 rounded shadow-sm">
+            <div className="col flex flex-col w-10/12 h-32 m-2 p-6  rounded-lg cursor-pointer transition-all duration-300 
+                shadow-lg hover:shadow-xl transform hover:scale-105 bg-white text-start inter text-lg font-semibold">
                 Approved Requests <br />
-                <strong>{summaryData.lowStockCategories}</strong>
+                <strong className="mt-1">{summaryData.lowStockCategories}</strong>
               </div>
-            </div>
-            <div className="col">
-              <div className="bg-light text-start p-4 rounded shadow-sm">
+            <div className="col flex flex-col w-10/12 h-32 m-2 p-6  rounded-lg cursor-pointer transition-all duration-300 
+                shadow-lg hover:shadow-xl transform hover:scale-105 bg-white text-start inter text-lg font-semibold">
                 Requests Over Time <br />
-                <strong>{summaryData.recentlyUpdatedCategories}</strong>
+                <strong className="mt-1">{summaryData.recentlyUpdatedCategories}</strong>
               </div>
-            </div>
           </div>
         </div>
+        <div className="d-flex justify-content-end  m-3 align-items-center">
+        <button className="btn blue d-flex align-items-center text-white rounded-xl w-54 text-lg font-semibold inter p-3  gap-4 align-items-lg-center">
+          Add Purchase
+          <img src="./add.png" alt="add.png" />
+        </button>
+      </div>
 
         <div className="ag-theme-quartz" style={{ height: "500px", width: "100%" }}>
           <AgGridReact
@@ -104,7 +106,6 @@ function PurchaseRequest() {
             onGridReady={(params) => params.api.sizeColumnsToFit()}
           />
         </div>
-      </div>
     </>
   );
 }

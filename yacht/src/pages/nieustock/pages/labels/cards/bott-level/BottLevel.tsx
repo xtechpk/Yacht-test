@@ -47,8 +47,9 @@ const BottLevel = () => {
 
   return (
     <>
+    
       {/* Table for Labels */}
-      <div className="ag-theme-quartz" style={{ height: "500px", width: "100%" }}>
+      <div className="ag-theme-quartz rounded-sm" style={{ height: "500px", width: "100%" }}>
         {loading ? (
           <div>Loading...</div>
         ) : error ? (

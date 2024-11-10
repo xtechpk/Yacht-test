@@ -16,46 +16,52 @@ function NieuStock() {
   return (
     <>
       <div className="container-fluid min-vh-100">
-        <h3 className="mb-4 text-black">NIEUSTOCK</h3>
+      <h3 className="mb-4 text-black ubuntu fw-bold text-3xl">NIEUSTOCK</h3>
         <div className="container-fluid text-center mt-4">
-          <div className="row g-xxl-4 mb-4 gap-20 p-1">
+          <div className="row  ">
             {/* Card Section */}
             <div
-              className={`col ${activeCard === "Products" ? "bg-primary text-white" : "bg-light"} text-start p-8 rounded shadow-sm `}
+              className={`col flex flex-col w-12/12 h-32 m-2 p-6  rounded-lg cursor-pointer transition-all duration-300 
+                shadow-lg hover:shadow-xl transform hover:scale-105 bg-white text-start inter text-lg font-semibold ${activeCard === "Products" ? "blue text-white" : "bg-light"} text-start p-8 rounded shadow-sm `}
               onClick={() => handleCardClick("Products")}
               style={{ cursor: "pointer" }}
             >
               Products
             </div>
             <div
-              className={`col ${activeCard === "Categories" ? "bg-primary text-white" : "bg-light"} text-start p-8 rounded shadow-sm`}
+              className={`col flex flex-col w-12/12 h-32 m-2 p-6  rounded-lg cursor-pointer transition-all duration-300 
+                shadow-lg hover:shadow-xl transform hover:scale-105 bg-white text-start inter text-lg font-semibold ${activeCard === "Categories" ? "blue text-white" : "bg-light"} text-start p-8 rounded shadow-sm`}
               onClick={() => handleCardClick("Categories")}
               style={{ cursor: "pointer" }}
             >
               Categories
             </div>
             <div
-              className={`col ${activeCard === "Stores" ? "bg-primary text-white" : "bg-light"} text-start p-8 rounded shadow-sm`}
+              className={`col flex flex-col w-12/12 h-32 m-2 p-6  rounded-lg cursor-pointer transition-all duration-300 
+                shadow-lg hover:shadow-xl transform hover:scale-105 bg-white text-start inter text-lg font-semibold ${activeCard === "Stores" ? "blue text-white" : "bg-light"} text-start p-8 rounded shadow-sm`}
               onClick={() => handleCardClick("Stores")}
               style={{ cursor: "pointer" }}
             >
               Stores
             </div>
             <div
-              className={`col ${activeCard === "Purchase Requests" ? "bg-primary text-white" : "bg-light"} text-start p-8 rounded shadow-sm`}
+              className={`col flex flex-col w-12/12 h-32 m-2 p-6  rounded-lg cursor-pointer transition-all duration-300 
+                shadow-lg hover:shadow-xl transform hover:scale-105 bg-white text-start inter text-lg font-semibold ${activeCard === "Purchase Requests" ? "blue text-white" : "bg-light"} text-start p-8 rounded shadow-sm`}
               onClick={() => handleCardClick("Purchase Requests")}
               style={{ cursor: "pointer" }}
             >
               Purchase Requests
             </div>
             <div
-              className={`col ${activeCard === "Labels" ? "bg-primary text-white" : "bg-light"} text-start p-8 rounded shadow-sm`}
+              className={`col flex flex-col w-12/12 h-32 m-2 p-6  rounded-lg cursor-pointer transition-all duration-300 
+                shadow-lg hover:shadow-xl transform hover:scale-105 bg-white text-start inter text-lg font-semibold ${activeCard === "Labels" ? "blue text-white" : "bg-light"} text-start p-8 rounded shadow-sm`}
               onClick={() => handleCardClick("Labels")}
               style={{ cursor: "pointer" }}
             >
               Labels
             </div>
           </div>
+          
 
           {/* Display the selected component below the cards */}
           <div className="mt-4">

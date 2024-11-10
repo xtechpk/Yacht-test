@@ -18,11 +18,9 @@ function NieuMatrix() {
   useEffect(() => {
     async function fetchCounts() {
       try {
-        // Replace with your API endpoint for fetching counts
         const response = await axios.get("https://api.example.com/nieumatrix-counts");
         const data = response.data;
         
-        // Update counts based on API response
         setCounts({
           damageAndDefects: data.damageAndDefects,
           plannedMaintenance: data.plannedMaintenance,
@@ -45,22 +43,21 @@ function NieuMatrix() {
     <>
       <div className="container-fluid min-vh-100">
         <h3 className="mb-4 text-black ubuntu fw-bold text-3xl">NIEUMATRIX</h3>
-        <div className="container mt-4 z-1 rounded shadow min-vh-100">
-          <div className="row g-2 g-lg-3 m-9">
+        <div className="container-fluid">
+          <div className="row ">
             <div
               className="col"
               onClick={() => handleCardClick("Damage and Defects")}
               style={{ cursor: "pointer" }}
             >
               <div
-                className={`text-start p-8 inter text-sm rounded shadow-sm ${
-                  activeCard === "Damage and Defects"
-                    ? "bg-primary text-white"
-                    : "bg-light"
-                }`}
+                className={`flex flex-col w-12/12 h-32 m-2 p-6 border rounded-lg cursor-pointer transition-all duration-300 
+                shadow-lg hover:shadow-xl transform hover:scale-105 bg-white text-start inter text-lg font-semibold  ${
+                activeCard === "Damage and Defects" ? "blue text-white" : "bg-light"
+                }`} 
               >
                 Damage and Defects <br />
-                <strong>{counts.damageAndDefects}</strong>
+                <strong className="mt-1">{counts.damageAndDefects}158</strong>
               </div>
             </div>
             <div
@@ -69,14 +66,13 @@ function NieuMatrix() {
               style={{ cursor: "pointer" }}
             >
               <div
-                className={`text-start p-8 rounded inter text-sm shadow-sm ${
-                  activeCard === "Planned Maintenance"
-                    ? "bg-primary text-white"
-                    : "bg-light"
-                }`}
+                className={`flex flex-col w-12/12 h-32 m-2 p-6 border rounded-lg cursor-pointer transition-all duration-300 
+                shadow-lg hover:shadow-xl transform hover:scale-105 bg-white text-start inter text-lg font-semibold  ${
+                activeCard === "Planned Maintenance" ? "blue text-white" : "bg-light"
+                }`} 
               >
                 Planned Maintenance <br />
-                <strong>{counts.plannedMaintenance}</strong>
+                <strong className="mt-1">{counts.plannedMaintenance}</strong>
               </div>
             </div>
             <div
@@ -85,14 +81,13 @@ function NieuMatrix() {
               style={{ cursor: "pointer" }}
             >
               <div
-                className={`text-start p-8 rounded inter text-sm shadow-sm ${
-                  activeCard === "Forward Planning"
-                    ? "bg-primary text-white"
-                    : "bg-light"
-                }`}
+                className={`flex flex-col w-12/12 h-32 m-2 p-6 border rounded-lg cursor-pointer transition-all duration-300 
+                shadow-lg hover:shadow-xl transform hover:scale-105 bg-white text-start inter text-lg font-semibold ${
+                activeCard === "Forward Planning" ? "blue text-white" : "bg-light"
+                }`} 
               >
                 Forward Planning <br />
-                <strong>{counts.forwardPlanning}</strong>
+                <strong className="mt-1">{counts.forwardPlanning}</strong>
               </div>
             </div>
             <div
@@ -101,14 +96,13 @@ function NieuMatrix() {
               style={{ cursor: "pointer" }}
             >
               <div
-                className={`text-start p-8 rounded inter text-sm shadow-sm ${
-                  activeCard === "LSA & FFE"
-                    ? "bg-primary text-white"
-                    : "bg-light"
-                }`}
+                className={`flex flex-col w-12/12 h-32 m-2 p-6 border rounded-lg cursor-pointer transition-all duration-300 
+                shadow-lg hover:shadow-xl transform hover:scale-105 text-start inter bg-white text-lg font-semibold  ${
+                activeCard === "LSA & FFE" ? "blue text-white" : "bg-light"
+                }`} 
               >
                 LSA & FFE <br />
-                <strong>{counts.lsaFfe}</strong>
+                <strong className="mt-1">{counts.lsaFfe}</strong>
               </div>
             </div>
           </div>

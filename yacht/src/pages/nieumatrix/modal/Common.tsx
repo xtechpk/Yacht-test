@@ -15,6 +15,7 @@ const Common : React.FC<CommonProps> = ({show, onHide}) => {
       <div className="custom-container">
           <div className="custom-header d-flex justify-content-between align-items-center">
             <h4 className='ubuntu text-center align-middle'>Add New Task</h4>
+            
           </div>
       </div>
     </Modal>

@@ -1,12 +1,13 @@
 .custom-modal-width .modal-dialog {
-  max-width: 1200px;
+  max-width: 1400px;
+  position: fixed;
 }
 
 .custom-container {
   padding: 1rem;
   border-radius: 8px;
-  background: linear-gradient(to bottom, #d7d9d9, #e9ecef);
-  width: 800px;
+  /*background: linear-gradient(to bottom, #d7d9d9, #e9ecef);*/
+  background-color: #fff;
 }
 
 .custom-header {
@@ -17,14 +18,14 @@
     padding: 1rem 0;
 }
 
-.custom-body .table {
+.custom-body1 .table {
   background-color: #d7d7d7; 
   border-radius: 8px;
-  overflow: hidden;
+  overflow: auto;
 
 }
 
-.custom-body .table td {
+.custom-body1 .table td {
   border-top: none;
   padding: 0.75rem;
   vertical-align: middle;

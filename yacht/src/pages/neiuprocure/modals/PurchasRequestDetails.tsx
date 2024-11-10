@@ -26,10 +26,11 @@ const PurchaseRequestDetails: React.FC<PurchaseRequestDetailsProps> = ({ show, o
   return (
     <>
       <Modal show={show} onHide={onHide} centered dialogClassName="custom-modal-width">
-        <div className="custom-container">
-          <div className="custom-header d-flex justify-content-between align-items-center">
-            <h4 className='ubuntu text-center align-middle'>Purchase Request Details</h4>
-          </div>
+        <div className="custom-container position-relative w-[700px] mr-72">
+        <div className="d-flex justify-content-center align-items-center">
+          <h4 className="ubuntu custom-header">Purchase Request Details</h4>
+        </div>
+
           <div className="custom-body" style={{ backgroundColor: "#D9D9D9" }} >
             <table className="table" >
               <tbody >
@@ -59,10 +60,10 @@ const PurchaseRequestDetails: React.FC<PurchaseRequestDetailsProps> = ({ show, o
               </tbody>
             </table>
           </div>
-          <div className="custom-footer d-flex justify-content-center items-center mt-4 gap-8">
-            <Button variant="inter fw-bold me-2 p-3 w-40" onClick={handleApproveClick} style={{backgroundColor:"#238600" , color: "#fff"}}>Approve</Button>
-            <Button variant="danger me-2 p-3 w-40" style={{ backgroundColor: "#6B6C6B", color: "#fff" }}>Reject</Button>
-            <Button variant="inter fw-bold  me-2 p-3 w-40" onClick={onHide} style={{backgroundColor:"#860000" , color: "#fff"}}>Back to List</Button>
+          <div className="custom-footer d-flex justify-content-center items-center mt-4 m-3 gap-8">
+            <Button variant="inter fw-bold me-2 p-3 " onClick={handleApproveClick} style={{backgroundColor:"#238600" , color: "#fff"}}>Approve</Button>
+            <Button variant="inter fw-bold me-2 p-3 " style={{ backgroundColor: "#6B6C6B", color: "#fff" }}>Reject</Button>
+            <Button variant="inter fw-bold  me-2 p-3 " onClick={onHide} style={{backgroundColor:"#860000" , color: "#fff"}}>Back to List</Button>
           </div>
 
         </div>

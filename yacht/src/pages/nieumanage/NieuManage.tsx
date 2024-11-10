@@ -81,38 +81,46 @@ function NieuManage() {
   return (
     <>
       <div className="container-fluid min-vh-100">
-        <h3 className="mb-4 text-black ubuntu fw-bold text-3xl">NieuManage</h3>
-        <div className="container mt-4 z-1 rounded shadow min-vh-100">
-          <div className="row g-2 g-lg-3 m-9">
+      <h3 className="mb-4 text-black ubuntu fw-bold text-3xl">NIEUMANAGE</h3>
+        <div className="container-fluid">
+          <div className="row">
             <div className="col">
-              <div className="bg-light text-start p-8 rounded shadow-sm">
+              <div className="flex flex-col w-12/12 h-32 m-2 p-6  rounded-lg cursor-pointer transition-all duration-300 
+                shadow-lg hover:shadow-xl transform hover:scale-105 bg-white text-start inter text-lg font-semibold">
                 Total <br />
-                <strong>{totalUsers}</strong>
+                <strong className="mt-1">{totalUsers}10</strong>
               </div>
             </div>
             <div className="col">
-              <div className="bg-light text-start p-8 rounded shadow-sm">
+              <div className="flex flex-col w-12/12 h-32 m-2 p-6  rounded-lg cursor-pointer transition-all duration-300 
+                shadow-lg hover:shadow-xl transform hover:scale-105 bg-white text-start inter text-lg font-semibold">
                 Active <br />
-                <strong>{activeUsers}</strong>
+                <strong className="mt-1">{activeUsers}</strong>
               </div>
             </div>
             <div className="col">
-              <div className="bg-light text-start p-8 rounded shadow-sm">
+              <div className="flex flex-col w-12/12 h-32 m-2 p-6  rounded-lg cursor-pointer transition-all duration-300 
+                shadow-lg hover:shadow-xl transform hover:scale-105 bg-white text-start inter text-lg font-semibold">
                 Inactive <br />
-                <strong>{inactiveUsers}</strong>
+                <strong className="mt-1">{inactiveUsers}</strong>
               </div>
             </div>
             <div className="col">
-              <div className="bg-light text-start p-8 rounded shadow-sm">
+              <div className="flex flex-col w-12/12 h-32 m-2 p-6  rounded-lg cursor-pointer transition-all duration-300 
+                shadow-lg hover:shadow-xl transform hover:scale-105 bg-white text-start inter text-lg font-semibold">
                 Super Admin <br />
-                <strong>{superAdminCount}</strong>
+                <strong className="mt-1">{superAdminCount}</strong>
               </div>
             </div>
           </div>
-          <div className="d-flex justify-content-end">
-            <button className="btn btn-primary p-3 mr-6" onClick={() => setShowDetails(true)}>
-              Add
-            </button>
+          <div className="d-flex justify-content-end  m-3 align-items-center">
+              <button
+                className="btn blue d-flex align-items-center rounded-xl w-54 text-white text-lg font-semibold inter p-3  gap-4 align-items-lg-center"
+                onClick={() => setShowDetails(true)}
+               >
+                Add & Manage
+                <img src="./add.png" alt="add.png"/>
+              </button>
           </div>
           <div className="ag-theme-quartz mt-3" style={{ height: "500px", width: "100%" }}>
             {loading ? (

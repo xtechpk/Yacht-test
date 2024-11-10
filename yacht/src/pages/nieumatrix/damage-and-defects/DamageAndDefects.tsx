@@ -59,8 +59,9 @@ function DamageAndDefects() {
   return (
     <>
       <div className="d-flex justify-content-end ">
-        <button className="btn btn-primary p-3 mr-6" onClick={()=>setShowDetails(true)}>
-          Add
+        <button className="btn blue text-white w-40 inter text-lg p-3 mr-6" onClick={()=>setShowDetails(true)}
+          >
+          Add Tasks
         </button>
       </div>
       {/* Table */}

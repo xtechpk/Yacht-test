@@ -55,35 +55,37 @@ function Categories() {
 
   return (
     <>
-    <div className="container mt-4 z-1 rounded shadow min-vh-100">
+    
       {/* Summary Cards */}
-      <div className="container text-center my-4">
-        <div className="row g-2 g-lg-3">
-          <div className="col">
-            <div className="bg-light text-start p-4 rounded shadow-sm">
+      <div className="container-fluid">
+        <div className="row gap-12 px-5">
+          <div className="col flex flex-col w-10/12 h-32 m-2 p-6  rounded-lg cursor-pointer transition-all duration-300 
+                shadow-lg hover:shadow-xl transform hover:scale-105 bg-white text-start inter text-lg font-semibold">
               Total Categories <br />
-              <strong>{summaryData.totalCategories} 10</strong>
-            </div>
+              <strong className="mt-1">{summaryData.totalCategories} 10</strong>
           </div>
-          <div className="col">
-            <div className="bg-light text-start p-4 rounded shadow-sm">
+          <div className="col flex flex-col w-10/12 h-32 m-2 p-6  rounded-lg cursor-pointer transition-all duration-300 
+                shadow-lg hover:shadow-xl transform hover:scale-105 bg-white text-start inter text-lg font-semibold">
               Top Categories By Stock <br />
-              <strong>{summaryData.topCategoriesStock} 10</strong>
-            </div>
+              <strong className="mt-1">{summaryData.topCategoriesStock} 10</strong>
           </div>
-          <div className="col">
-            <div className="bg-light text-start p-4 rounded shadow-sm">
+          <div className="col flex flex-col w-10/12 h-32 m-2 p-6  rounded-lg cursor-pointer transition-all duration-300 
+                shadow-lg hover:shadow-xl transform hover:scale-105 bg-white text-start inter text-lg font-semibold">
               Low Stock Categories <br />
-              <strong>{summaryData.lowStockCategories} 10</strong>
-            </div>
+              <strong className="mt-1">{summaryData.lowStockCategories} 10</strong>
           </div>
-          <div className="col">
-            <div className="bg-light text-start p-4 rounded shadow-sm">
+          <div className="col flex flex-col w-10/12 h-32 m-2 p-6  rounded-lg cursor-pointer transition-all duration-300 
+                shadow-lg hover:shadow-xl transform hover:scale-105 bg-white text-start inter text-lg font-semibold">
               Recently Updated Categories <br />
-              <strong>{summaryData.recentlyUpdatedCategories} 10</strong>
-            </div>
+              <strong className="mt-1">{summaryData.recentlyUpdatedCategories} 10</strong>
           </div>
         </div>
+      </div>
+      <div className="d-flex justify-content-end  m-3 align-items-center">
+        <button className="btn blue d-flex align-items-center text-white rounded-xl w-56 text-lg font-semibold inter p-3  gap-4 align-items-lg-center">
+          Add Categories
+          <img src="./add.png" alt="add.png" />
+        </button>
       </div>
 
       {/* Categories Table */}
@@ -96,7 +98,7 @@ function Categories() {
           onGridReady={(params) => params.api.sizeColumnsToFit()}
         />
       </div>
-    </div>
+
     </>
   );
 }

@@ -47,6 +47,7 @@ const BoxInventoryLabel = () => {
 
   return (
     <>
+    
       {/* Table for Labels */}
       <div className="ag-theme-quartz" style={{ height: "500px", width: "100%" }}>
         {loading ? (

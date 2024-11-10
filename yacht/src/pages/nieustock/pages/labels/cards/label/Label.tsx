@@ -41,6 +41,9 @@ const Label = () => {
   return (
     <>
       {/* Caeds for Labels */}
+      <div className="container-fluid">
+      <div className="row">
+        <div className="col-12">
       <div className="ag-theme-quartz" style={{ height: "500px", width: "100%" }}>
         {loading ? (
           <div>Loading...</div>
@@ -53,6 +56,9 @@ const Label = () => {
             onGridReady={(params) => params.api.sizeColumnsToFit()}
           />
         )}
+      </div>
+      </div>
+      </div>
       </div>
     </>
   );

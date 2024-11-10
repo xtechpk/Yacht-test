@@ -4,7 +4,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Sidebar from './components/Sidebar';
 import Header from './components/Header';
 import Dashboard from './pages/neiudash/Dashboard';
-import Neiuprocure from './pages/neiuprocure/Nieuprocure';
 import NieuStock from './pages/nieustock/NieuStock';
 import NieuMatrix from './pages/nieumatrix/NieuMatrix';
 import NieuSet from './pages/nieuset/NieuSet';
@@ -20,6 +19,7 @@ import NieuZoneAdvance from './pages/nieuzone-advance/NieuZoneAdvance';
 import NieuTemplate from './pages/nieutemplate/NieuTemplate';
 import NieuCal from './pages/nieucal/NieuCal';
 import NieuFinance from './pages/nieufinance/NieuFinance';
+import Neiuprocure from './pages/neiuprocure/Nieuprocure';
 
 function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -31,7 +31,6 @@ function App() {
   return (
     <Router>
       <div className="d-flex bg-blue-500">
-        {/* Sidebar component */}
         <Sidebar onSidebarToggle={handleSidebarToggle} />
 
         <div

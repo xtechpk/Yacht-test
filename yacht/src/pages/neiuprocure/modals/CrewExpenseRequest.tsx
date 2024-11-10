@@ -34,83 +34,93 @@ const CrewExpenseRequest: React.FC<CrewExpenseRequestProps> = ({ show, onHide })
         centered
         dialogClassName="custom-modal-width"
       >
-        <div className="custom-container">
+        <div className="custom-container  w-96">
           <h4 className="custom-header">Crew Expense Request</h4>
-          <div className="custom-body" >
+          <div className="custom-body1 w-96 ml-8 " >
             <label className="pop text-[#000] text-base fw-bold">Date :</label>
-            <input style={{ backgroundColor: "#F2F2F2" }}
+            <input 
               type="date" placeholder='dd/mm/yyyy'
-              className="form-control p-2 mt-1  text-black
+              className="form-control p-2 mt-1  text-black input
               border-[#ccc] border-[2px] w-full inter text-sm fw-bold"
               aria-describedby="date"
             />
             <label className="inter text-[#000] text-base fw-bold">Supplier :</label>
-            <input style={{ backgroundColor: "#F2F2F2" }}
+            <input 
               type="text"
-              className="form-control p-2 mt-1  border-[#ccc] border-[2px] w-full inter text-sm text-[#000] fw-bold"
+              className="form-control p-2 mt-1 input  border-[#ccc] border-[2px] w-full inter text-sm text-[#000] fw-bold"
               aria-describedby="date"
               
             />
             <label className="inter text-[#000] text-base fw-bold">Description :</label>
-            <input style={{ backgroundColor: "#F2F2F2" }}
+            <input 
               type="text"
-              className="form-control p-2 mt-1  border-[#ccc] border-[2px] w-full inter text-sm text-[#000] fw-bold"
+              className="form-control p-2 mt-1 input  border-[#ccc] border-[2px] w-full inter text-sm text-[#000] fw-bold"
               aria-describedby="date"
               
             />
             <label className="inter text-[#000] text-base fw-bold">Budghet Code (Name):</label>
-            <input style={{ backgroundColor: "#F2F2F2" }}
+            <input 
               type="text"
-              className="form-control p-2 mt-1  border-[#ccc] border-[2px] w-full inter text-sm text-[#000] fw-bold"
+              className="form-control p-2 mt-1 input  border-[#ccc] border-[2px] w-full inter text-sm text-[#000] fw-bold"
               aria-describedby="date"
               
             />
             <label className="inter text-[#000] text-base fw-bold">Budget Number :</label>
-            <input style={{ backgroundColor: "#F2F2F2" }}
+            <input 
               type="text"
-              className="form-control p-2 mt-1  border-[#ccc] border-[2px] w-full inter text-sm text-[#000] fw-bold"
+              className="form-control p-2 mt-1 input  border-[#ccc] border-[2px] w-full inter text-sm text-[#000] fw-bold"
               aria-describedby="date"
               
             />
             <label className="inter text-[#000] text-base fw-bold">Receipt Amount :</label>
             <input style={{ backgroundColor: "#F2F2F2" }}
               type="text"
-              className="form-control p-2 mt-1  border-[#ccc] border-[2px] w-full inter text-sm text-[#000] fw-bold"
+              className="form-control p-2 mt-1 input  border-[#ccc] border-[2px] w-full inter text-sm text-[#000] fw-bold"
               aria-describedby="date"
               
             />
             <label className="inter text-[#000] text-base fw-bold">Currency :</label>
-            <input style={{ backgroundColor: "#F2F2F2" }}
+            <input 
               type="text"
-              className="form-control p-2 mt-1  border-[#ccc] border-[2px] w-full inter text-sm text-[#000] fw-bold"
+              className="form-control p-2 mt-1 input  border-[#ccc] border-[2px] w-full inter text-sm text-[#000] fw-bold"
               aria-describedby="date"
               
             />
             <label className="inter text-[#000] text-base fw-bold">Exchange Rate:</label>
-            <input style={{ backgroundColor: "#F2F2F2" }}
+            <input 
               type="text"
-              className="form-control p-2 mt-1  border-[#ccc] border-[2px] w-full inter text-sm text-[#000] fw-bold"
+              className="form-control p-2 mt-1 input border-[#ccc] border-[2px] w-full inter text-sm text-[#000] fw-bold"
               aria-describedby="date"
               
             />
             <label className="inter text-[#000] text-base fw-bold">Total in Default Currency</label>
-            <input style={{ backgroundColor: "#F2F2F2" }}
+            <input 
               type="text"
-              className="form-control p-2 mt-1  border-[#ccc] border-[2px] w-full inter text-sm text-[#000] fw-bold"
+              className="form-control p-2 mt-1 input  border-[#ccc] border-[2px] w-full inter text-sm text-[#000] fw-bold"
               aria-describedby="date"
              
             />
             <label className="inter text-[#000] text-base fw-bold">Upload Receipt</label>
-            <input style={{ backgroundColor: "#F2F2F2" }}
+            <input 
               type="file"
-              className="form-control p-2 mt-1  border-[#ccc] border-[2px] w-full inter text-sm text-[#000] fw-bold"
+              className="form-control p-2 mt-1 input  border-[#ccc] border-[2px] w-full inter text-sm text-[#000] fw-bold"
               aria-describedby="file"
               
             />
           </div>
-          <div className="custom-footer d-flex justify-content-center align-items-center gap-4">
-            <Button variant=" me-2 p-3 w-40 inter fw-bold" onClick={handleProceedClick} style={{backgroundColor:"#238600" , color: "#fff"}}>Submit Request</Button>
-            <Button variant=" me-2 p-3 w-40 inter fw-bold" onClick={onHide} style={{backgroundColor:"#860000" , color: "#fff"}}>
+          <div className="custom-footer d-flex justify-content-center align-items-center gap-4 w-100 mt-4 ">
+            <Button
+                className="me-2 p-3 w-40 inter fw-bold"
+                onClick={handleProceedClick}
+                style={{ backgroundColor: "#238600", color: "#fff" }}
+            >
+              Submit Request
+            </Button>
+            <Button
+              className="me-2 p-3 w-32 inter fw-bold mr-10"
+              onClick={onHide}
+              style={{ backgroundColor: "#860000", color: "#fff" }}
+            >
               Cancel
             </Button>
           </div>
