@@ -4,7 +4,7 @@ import { AgGridReact } from "ag-grid-react";
 import { ColDef } from "ag-grid-community";
 import "ag-grid-community/styles/ag-grid.css";
 import "ag-grid-community/styles/ag-theme-quartz.css";
-import Common from "../modal/Common";
+import Common from "./modal/Common";
 
 interface CategoryData {
   no: number;
@@ -30,7 +30,17 @@ function DamageAndDefects() {
     { field: "department", flex: 1, headerName: "Dept.", filter: "agTextColumnFilter", floatingFilter: true },
     { field: "location", flex: 1, headerName: "Location", filter: "agTextColumnFilter", floatingFilter: true },
     { field: "assigned", flex: 1, headerName: "Assigned", filter: "agTextColumnFilter", floatingFilter: true },
-    { field: "status", flex: 1, headerName: "Status", filter: "agTextColumnFilter", floatingFilter: true },
+    {
+      field: "status",
+      flex: 1,
+      headerName: "Status",
+      filter: "agTextColumnFilter",
+      floatingFilter: true,
+      cellStyle: (params) => ({
+        color: params.value === "Approved" ? "green" : params.value === "Pending" ? "red" : "black",
+        textDecoration: "underline"
+      }),
+    },
     { field: "equipment", flex: 1, headerName: "Equipment", filter: "agTextColumnFilter", floatingFilter: true },
     { field: "tools", flex: 1, headerName: "Tools", filter: "agTextColumnFilter", floatingFilter: true },
   ];
@@ -58,10 +68,11 @@ function DamageAndDefects() {
 
   return (
     <>
-      <div className="d-flex justify-content-end ">
-        <button className="btn blue text-white w-40 inter text-lg p-3 mr-6" onClick={()=>setShowDetails(true)}
+      <div className="d-flex justify-content-end  m-3 align-items-center mx-4">
+        <button className="btn blue d-flex align-items-center rounded-xl w-54 text-white text-lg font-semibold inter p-3  gap-4 align-items-lg-center" onClick={()=>setShowDetails(true)}
           >
-          Add Tasks
+          Add Damage and Defects
+          <img src="./add.png" alt="add.png"/>
         </button>
       </div>
       {/* Table */}

@@ -26,7 +26,7 @@ function Neiuprocure() {
                 shadow-lg hover:shadow-xl transform hover:scale-105 bg-white text-start inter text-lg font-semibold">Pending <br /><strong>20</strong></div></div>
             </div>
           </div>
-          <div className="d-flex justify-content-end  m-3 align-items-center mx-5">
+          <div className="d-flex justify-content-end  m-3 align-items-center mx-4">
               <button
                 className="btn blue d-flex align-items-center rounded-xl w-54 text-white text-lg font-semibold inter p-3  gap-4 align-items-lg-center"
                >

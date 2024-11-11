@@ -1,6 +1,6 @@
 .custom-modal-width .modal-dialog {
-  max-width: 1400px;
-  position: fixed;
+  max-width: 1200px;
+  position: absolute;
 }
 
 .custom-container {
@@ -8,6 +8,7 @@
   border-radius: 8px;
   /*background: linear-gradient(to bottom, #d7d9d9, #e9ecef);*/
   background-color: #fff;
+  width: 600px;
 }
 
 .custom-header {
