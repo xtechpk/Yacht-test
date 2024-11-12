@@ -1,14 +1,14 @@
 import { useState } from "react";
 import { Modal } from "react-bootstrap";
 
-interface CommonProps {
+interface PlanedModalProps {
   show: boolean;
   onHide: () => void;
 }
 
 
 
-const PlanedModel: React.FC<CommonProps> = ({ show, onHide }) => {
+const PlanedModel: React.FC<PlanedModalProps> = ({ show, onHide }) => {
 
 
     // State for each input field
@@ -75,7 +75,7 @@ const PlanedModel: React.FC<CommonProps> = ({ show, onHide }) => {
         <Modal show={show} onHide={onHide} centered dialogClassName="custom-modal-width">
       <div className="custom-container">
         <div className="custom-header text-center">
-          <h4 className="ubuntu">Add New Task</h4>
+          <h4 className="ubuntu">Add Planned Maintenance</h4>
         </div>
         <div className="custom-body1 p-3">
           {error && <div className="alert alert-danger text-center">{error}</div>} {/* Display error if present */}
@@ -144,7 +144,7 @@ const PlanedModel: React.FC<CommonProps> = ({ show, onHide }) => {
             onChange={(e) => setDeadline(e.target.value)}
           />
           <div className="text-center mt-3">
-            <button className=" green w-48 p-3 px-40 rounded-lg text-white font-semibold inter" onClick={handleSubmit}>Add</button>
+            <button className=" green w-48 p-2 px-40 rounded-lg text-white font-semibold inter" onClick={handleSubmit}>Add</button>
           </div>
         </div>
       </div>

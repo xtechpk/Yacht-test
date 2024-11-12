@@ -3,12 +3,12 @@ import { Button, Modal } from "react-bootstrap";
 import axios from "axios";
 
 
-interface AddManageProps {
+interface AdminModalProps {
   show: boolean;
   onHide: () => void;
 }
 
-const AddManage: React.FC<AddManageProps> = ({ show, onHide }) => {
+const AdminModal: React.FC<AdminModalProps> = ({ show, onHide }) => {
   const [userName, setUserName] = useState<string>("");
   const [role, setRole] = useState<string>("");
   const [email, setEmail] = useState<string>("");
@@ -75,7 +75,7 @@ const AddManage: React.FC<AddManageProps> = ({ show, onHide }) => {
           />
         </div>
         {error && <div className="text-danger text-center mt-2">{error}</div>}
-        <div className="custom-footer d-flex justify-content-center align-items-center gap-4 w-100 px-40">
+        <div className="custom-footer d-flex justify-content-center align-items-center gap-4 w-100 px-48">
           <Button className="btn blue" onClick={handleSubmit}>
           Add
           </Button>
@@ -87,4 +87,4 @@ const AddManage: React.FC<AddManageProps> = ({ show, onHide }) => {
   );
 };
 
-export default AddManage;
+export default AdminModal;

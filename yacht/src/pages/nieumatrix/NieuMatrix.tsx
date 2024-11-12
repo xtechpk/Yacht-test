@@ -51,7 +51,7 @@ function NieuMatrix() {
               style={{ cursor: "pointer" }}
             >
               <div
-                className={`flex flex-col w-12/12 h-32 m-2 p-6 border rounded-lg cursor-pointer transition-all duration-300 
+                className={`flex flex-col w-12/12 h-32 m-2 p-6  rounded-lg cursor-pointer transition-all duration-300 
                 shadow-lg hover:shadow-xl transform hover:scale-105 bg-white text-start inter text-lg font-semibold  ${
                 activeCard === "Damage and Defects" ? "blue text-white" : "bg-light"
                 }`} 
@@ -66,7 +66,7 @@ function NieuMatrix() {
               style={{ cursor: "pointer" }}
             >
               <div
-                className={`flex flex-col w-12/12 h-32 m-2 p-6 border rounded-lg cursor-pointer transition-all duration-300 
+                className={`flex flex-col w-12/12 h-32 m-2 p-6  rounded-lg cursor-pointer transition-all duration-300 
                 shadow-lg hover:shadow-xl transform hover:scale-105 bg-white text-start inter text-lg font-semibold  ${
                 activeCard === "Planned Maintenance" ? "blue text-white" : "bg-light"
                 }`} 
@@ -81,7 +81,7 @@ function NieuMatrix() {
               style={{ cursor: "pointer" }}
             >
               <div
-                className={`flex flex-col w-12/12 h-32 m-2 p-6 border rounded-lg cursor-pointer transition-all duration-300 
+                className={`flex flex-col w-12/12 h-32 m-2 p-6 rounded-lg cursor-pointer transition-all duration-300 
                 shadow-lg hover:shadow-xl transform hover:scale-105 bg-white text-start inter text-lg font-semibold ${
                 activeCard === "Forward Planning" ? "blue text-white" : "bg-light"
                 }`} 
@@ -96,7 +96,7 @@ function NieuMatrix() {
               style={{ cursor: "pointer" }}
             >
               <div
-                className={`flex flex-col w-12/12 h-32 m-2 p-6 border rounded-lg cursor-pointer transition-all duration-300 
+                className={`flex flex-col w-12/12 h-32 m-2 p-6 rounded-lg cursor-pointer transition-all duration-300 
                 shadow-lg hover:shadow-xl transform hover:scale-105 text-start inter bg-white text-lg font-semibold  ${
                 activeCard === "LSA & FFE" ? "blue text-white" : "bg-light"
                 }`} 
