@@ -16,7 +16,7 @@ const ForwardModal: React.FC<ForwardModalProps> = ({ show, onHide }) => {
   const [date, setDate] = useState("");
   const [assignees, setAssignees] = useState("");
   const [deadline, setDeadline] = useState("");
-  const [error, setError] = useState<string | null>(null); // Error state
+  const [error, setError] = useState<string | null>(null);
 
   // Handle form submission
   const handleSubmit = async () => {
@@ -41,7 +41,6 @@ const ForwardModal: React.FC<ForwardModalProps> = ({ show, onHide }) => {
       });
 
       if (response.ok) {
-        // Reset form fields and close the modal on successful submission
         setTitle("");
         setDescription("");
         setLocation("");
@@ -50,15 +49,13 @@ const ForwardModal: React.FC<ForwardModalProps> = ({ show, onHide }) => {
         setDate("");
         setAssignees("");
         setDeadline("");
-        setError(null); // Clear any previous errors
-        onHide(); // Close the modal
+        setError(null);
+        onHide();
       } else {
-        // If the API responds with an error, set the error message
         const errorMessage = await response.text();
         setError(errorMessage || "Failed to submit the form.");
       }
     } catch (error) {
-      // Handle any other errors that occur during fetch
       setError("An error occurred while submitting the form. Please try again.");
       console.error("Error:", error);
     }
@@ -66,83 +63,106 @@ const ForwardModal: React.FC<ForwardModalProps> = ({ show, onHide }) => {
 
   return (
     <>
-    <Modal show={show} onHide={onHide} centered dialogClassName="custom-modal-width">
-      <div className="custom-container">
-        <div className="custom-header text-center">
-          <h4 className="ubuntu">Add Forward Planning</h4>
-        </div>
-        <div className="custom-body1 p-3">
-          {error && <div className="alert alert-danger text-center">{error}</div>} {/* Display error if present */}
-          <label className="inter text-[#000] pt-2 pb-2 text-base fw-bold">Title:</label>
-          <input
-            type="text"
-            className="form-control input"
-            placeholder="Enter Title"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-          />
-          <label className="inter text-[#000] pt-2 pb-2 text-base fw-bold">Description:</label>
-          <input
-            type="text"
-            className="form-control input"
-            placeholder="Enter Description"
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-          />
-          <label className="inter text-[#000] pt-2 pb-2 text-base fw-bold">Location:</label>
-          <input
-            type="text"
-            className="form-control input"
-            placeholder="Enter Location"
-            value={location}
-            onChange={(e) => setLocation(e.target.value)}
-          />
-          <label className="inter text-[#000] pt-2 pb-2 text-base fw-bold">Deck:</label>
-          <input
-            type="text"
-            className="form-control input"
-            placeholder="Enter Deck"
-            value={deck}
-            onChange={(e) => setDeck(e.target.value)}
-          />
-          <label className="inter text-[#000] pt-2 pb-2 text-base fw-bold">Department:</label>
-          <input
-            type="text"
-            className="form-control input"
-            placeholder="Enter Department"
-            value={department}
-            onChange={(e) => setDepartment(e.target.value)}
-          />
-          <label className="inter text-[#000] pt-2 pb-2 text-base fw-bold">Date:</label>
-          <input
-            type="date"
-            className="form-control input"
-            placeholder="Enter Date"
-            value={date}
-            onChange={(e) => setDate(e.target.value)}
-          />
-          <label className="inter text-[#000] pt-2 pb-2 text-base fw-bold">Assignees:</label>
-          <input
-            type="text"
-            className="form-control input"
-            placeholder="Enter Assignees"
-            value={assignees}
-            onChange={(e) => setAssignees(e.target.value)}
-          />
-          <label className="inter text-[#000] pt-2 pb-2 text-base fw-bold">Deadline:</label>
-          <input
-            type="date"
-            className="form-control input"
-            placeholder="Enter Deadline"
-            value={deadline}
-            onChange={(e) => setDeadline(e.target.value)}
-          />
-          <div className="text-center mt-3">
-            <button className=" green w-48 p-2 px-40 rounded-lg text-white font-semibold inter" onClick={handleSubmit}>Add</button>
+      <Modal show={show} onHide={onHide} centered dialogClassName="custom-modal-width">
+        <div className="custom-container">
+          <div className="custom-body1 p-3">
+            {error && <div className="alert alert-danger text-center">{error}</div>}
+            <div className="row">
+              <div className="col">
+                <label className="inter text-[#000] pt-2 pb-2 text-base fw-bold">Title:</label>
+                <input
+                  type="text"
+                  className="form-control input"
+                  placeholder="Enter Title"
+                  value={title}
+                  onChange={(e) => setTitle(e.target.value)}
+                />
+              </div>
+              <div className="col">
+                <label className="inter text-[#000] pt-2 pb-2 text-base fw-bold">Description:</label>
+                <input
+                  type="text"
+                  className="form-control input"
+                  placeholder="Enter Description"
+                  value={description}
+                  onChange={(e) => setDescription(e.target.value)}
+                />
+              </div>
+            </div>
+            <div className="row">
+              <div className="col">
+                <label className="inter text-[#000] pt-2 pb-2 text-base fw-bold">Location:</label>
+                <input
+                  type="text"
+                  className="form-control input"
+                  placeholder="Enter Location"
+                  value={location}
+                  onChange={(e) => setLocation(e.target.value)}
+                />
+              </div>
+              <div className="col">
+                <label className="inter text-[#000] pt-2 pb-2 text-base fw-bold">Deck:</label>
+                <input
+                  type="text"
+                  className="form-control input"
+                  placeholder="Enter Deck"
+                  value={deck}
+                  onChange={(e) => setDeck(e.target.value)}
+                />
+              </div>
+            </div>
+            <div className="row">
+              <div className="col">
+                <label className="inter text-[#000] pt-2 pb-2 text-base fw-bold">Department:</label>
+                <input
+                  type="text"
+                  className="form-control input"
+                  placeholder="Enter Department"
+                  value={department}
+                  onChange={(e) => setDepartment(e.target.value)}
+                />
+              </div>
+              <div className="col">
+                <label className="inter text-[#000] pt-2 pb-2 text-base fw-bold">Date:</label>
+                <input
+                  type="date"
+                  className="form-control input"
+                  placeholder="Enter Date"
+                  value={date}
+                  onChange={(e) => setDate(e.target.value)}
+                />
+              </div>
+            </div>
+            <div className="row">
+              <div className="col">
+                <label className="inter text-[#000] pt-2 pb-2 text-base fw-bold">Assignees:</label>
+                <input
+                  type="text"
+                  className="form-control input"
+                  placeholder="Enter Assignees"
+                  value={assignees}
+                  onChange={(e) => setAssignees(e.target.value)}
+                />
+              </div>
+              <div className="col">
+                <label className="inter text-[#000] pt-2 pb-2 text-base fw-bold">Deadline:</label>
+                <input
+                  type="date"
+                  className="form-control input"
+                  placeholder="Enter Deadline"
+                  value={deadline}
+                  onChange={(e) => setDeadline(e.target.value)}
+                />
+              </div>
+            </div>
+            <div className="text-center mt-3">
+              <button className="green w-48 p-2 px-40 rounded-lg text-white font-semibold inter" onClick={handleSubmit}>
+                Add
+              </button>
+            </div>
           </div>
         </div>
-      </div>
-    </Modal>
+      </Modal>
     </>
   );
 };

@@ -68,76 +68,53 @@ const Common: React.FC<CommonProps> = ({ show, onHide }) => {
     <>
     <Modal show={show} onHide={onHide} centered dialogClassName="custom-modal-width">
       <div className="custom-container">
-        <div className="custom-header text-center">
-          <h4 className="ubuntu">Add Damage and Defects</h4>
-        </div>
+        
         <div className="custom-body1 p-3">
-          {error && <div className="alert alert-danger text-center">{error}</div>} {/* Display error if present */}
-          <label className="inter text-[#000] pt-2 pb-2 text-base fw-bold">Title:</label>
-          <input
-            type="text"
-            className="form-control input"
-            placeholder="Enter Title"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-          />
-          <label className="inter text-[#000] pt-2 pb-2 text-base fw-bold">Description:</label>
-          <input
-            type="text"
-            className="form-control input"
-            placeholder="Enter Description"
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-          />
-          <label className="inter text-[#000] pt-2 pb-2 text-base fw-bold">Location:</label>
-          <input
-            type="text"
-            className="form-control input"
-            placeholder="Enter Location"
-            value={location}
-            onChange={(e) => setLocation(e.target.value)}
-          />
-          <label className="inter text-[#000] pt-2 pb-2 text-base fw-bold">Deck:</label>
-          <input
-            type="text"
-            className="form-control input"
-            placeholder="Enter Deck"
-            value={deck}
-            onChange={(e) => setDeck(e.target.value)}
-          />
-          <label className="inter text-[#000] pt-2 pb-2 text-base fw-bold">Department:</label>
-          <input
-            type="text"
-            className="form-control input"
-            placeholder="Enter Department"
-            value={department}
-            onChange={(e) => setDepartment(e.target.value)}
-          />
-          <label className="inter text-[#000] pt-2 pb-2 text-base fw-bold">Date:</label>
-          <input
-            type="date"
-            className="form-control input"
-            placeholder="Enter Date"
-            value={date}
-            onChange={(e) => setDate(e.target.value)}
-          />
-          <label className="inter text-[#000] pt-2 pb-2 text-base fw-bold">Assignees:</label>
-          <input
-            type="text"
-            className="form-control input"
-            placeholder="Enter Assignees"
-            value={assignees}
-            onChange={(e) => setAssignees(e.target.value)}
-          />
-          <label className="inter text-[#000] pt-2 pb-2 text-base fw-bold">Deadline:</label>
-          <input
-            type="date"
-            className="form-control input"
-            placeholder="Enter Deadline"
-            value={deadline}
-            onChange={(e) => setDeadline(e.target.value)}
-          />
-          <div className="text-center mt-3">
+          {error && <div className="alert alert-danger text-center">{error}</div>} 
+          <div className="row">
+            <div className="col">
+              <label className="inter fw-bold pt-2 pb-2">Title:</label>
+              <input type="text" className="form-control input" placeholder="Enter Title" value={title} onChange={(e) => setTitle(e.target.value)} />
+            </div>
+            <div className="col">
+              <label className="inter fw-bold pt-2 pb-2">Description:</label>
+              <input type="text" className="form-control input" placeholder="Enter Description" value={description} onChange={(e) => setDescription(e.target.value)} />
+            </div>
+          </div>
+
+          <div className="row ">
+            <div className="col">
+              <label className="inter fw-bold pt-2 pb-2">Location:</label>
+              <input type="text" className="form-control input" placeholder="Enter Location" value={location} onChange={(e) => setLocation(e.target.value)} />
+            </div>
+            <div className="col">
+              <label className="inter fw-bold pt-2 pb-2">Deck:</label>
+              <input type="text" className="form-control input" placeholder="Enter Deck" value={deck} onChange={(e) => setDeck(e.target.value)} />
+            </div>
+          </div>
+
+          <div className="row">
+            <div className="col">
+              <label className="inter fw-bold pt-2 pb-2">Department:</label>
+              <input type="text" className="form-control input" placeholder="Enter Department" value={department} onChange={(e) => setDepartment(e.target.value)} />
+            </div>
+            <div className="col">
+              <label className="inter fw-bold pt-2 pb-2">Date:</label>
+              <input type="date" className="form-control input" value={date} onChange={(e) => setDate(e.target.value)} />
+            </div>
+          </div>
+
+          <div className="row">
+            <div className="col">
+              <label className="inter fw-bold pt-2 pb-2">Assignees:</label>
+              <input type="text" className="form-control input" placeholder="Enter Assignees" value={assignees} onChange={(e) => setAssignees(e.target.value)} />
+            </div>
+            <div className="col">
+              <label className="inter fw-bold pt-2 pb-2">Deadline:</label>
+              <input type="date" className="form-control input" value={deadline} onChange={(e) => setDeadline(e.target.value)} />
+            </div>
+          </div>
+          <div className="text-center mt-3 pt-2 pb-2">
             <button className=" green w-48 p-2 px-40 rounded-lg text-white font-semibold inter" onClick={handleSubmit}>Add</button>
           </div>
         </div>
