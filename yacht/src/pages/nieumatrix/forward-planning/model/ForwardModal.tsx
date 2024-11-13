@@ -64,8 +64,8 @@ const ForwardModal: React.FC<ForwardModalProps> = ({ show, onHide }) => {
   return (
     <>
       <Modal show={show} onHide={onHide} centered dialogClassName="custom-modal-width">
-        <div className="custom-container">
-          <div className="custom-body1 p-3">
+        <div className="custom-container " >
+          <div className="custom-body1 p-3 ">
             {error && <div className="alert alert-danger text-center">{error}</div>}
             <div className="row">
               <div className="col">

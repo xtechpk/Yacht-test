@@ -1,141 +1,91 @@
-import React, { useState } from 'react';
-import { IoAddCircleOutline } from 'react-icons/io5';
-import { GrSubtractCircle } from 'react-icons/gr';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import PlanedModel from './modal/PlanedModel';
+import { useState, useEffect } from "react";
+import { AgGridReact } from "ag-grid-react";
+import { ColDef } from "ag-grid-community";
+import axios from "axios";
+import "ag-grid-community/styles/ag-grid.css";
+import "ag-grid-community/styles/ag-theme-quartz.css";
+import PlanedModel from "./modal/PlanedModel";
 
-type SubTask = {
-  id: string;
-  title: string;
+interface DepartmentData {
+  no: number;
+  taskTitle: string;
+  description: string;
+  department: string;
+  location: string;
+  assigned: string;
   status: string;
-  assignee: string;
-  complete: number;
-  subtasks?: SubTask[];
-};
+  equipment: string;
+  tools: string;
+}
 
-type TaskProps = {
-  task: SubTask;
-};
-
-// Sample data for tasks
-const sampleTasks: SubTask[] = [
-  {
-    id: "1",
-    title: "Parent Task A",
-    status: "In Progress",
-    assignee: "John Doe",
-    complete: 40,
-    subtasks: [
-      {
-        id: "1.1",
-        title: "Sub-task 1 of Parent Task A",
-        status: "To Do",
-        assignee: "Jane Doe",
-        complete: 0,
-        
-  
-      },
-      {
-        id: "1.2",
-        title: "Sub-task 2 of Parent Task A",
-        status: "To Do",
-        assignee: "",
-        complete: 0,
-      },
-      {
-        id: "1.3",
-        title: "Sub-task 2 of Parent Task A",
-        status: "To Do",
-        assignee: "",
-        complete: 0,
-      },
-    ],
-  },
-  {
-    id: "2",
-    title: "Parent Task B",
-    status: "In Progress",
-    assignee: "John Doe",
-    complete: 40,
-    subtasks: [
-      {
-        id: "2.1",
-        title: "Sub-task 1 of Parent Task B",
-        status: "To Do",
-        assignee: "Jane Doe",
-        complete: 0,
-      },
-      {
-        id: "2.2",
-        title: "Sub-task 2 of Parent Task B",
-        status: "To Do",
-        assignee: "",
-        complete: 0,
-      },
-    ],
-  },
-];
-
-// Task component to display a single task and its subtasks
-const Task: React.FC<TaskProps> = ({ task }) => {
-  const [isExpanded, setIsExpanded] = useState(false);
-
-  const handleToggle = () => {
-    setIsExpanded(!isExpanded);
-  };
-
-  return (
-    <div className="ml-5 p-3">
-      <div className="d-flex align-items-center">
-        <button 
-          onClick={handleToggle} 
-          className="btn p-0 mr-2 d-flex align-items-center" 
-          style={{ border: 'none', background: 'none', cursor: 'pointer' }}
-        >
-          {isExpanded ? <GrSubtractCircle size={30} /> : <IoAddCircleOutline size={30} />}
-        </button>
-        <span><strong className='nunito text-base font-bold'>{task.title}</strong></span>
-      </div>
-      <div className="d-flex mt-2 gap-20 ml-7">
-        <span className='nunito text-sm font-semibold'>Status: {task.status}</span>
-        <span className='nunito text-sm font-semibold'>Assignee: {task.assignee}</span>
-        <span className='nunito text-sm font-semibold'>Complete: {task.complete}%</span>
-      </div>
-      {isExpanded && task.subtasks && (
-        <div className="ml-5">
-          {task.subtasks.map((subtask) => (
-            <Task key={subtask.id} task={subtask} />
-          ))}
-        </div>
-      )}
-    </div>
-  );
-};
-
-const PlanedMaintenance: React.FC = () => {
+function PlanedMaintenance() {
+  const [rowData, setRowData] = useState<DepartmentData[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
   const [showDetails, setShowDetails] = useState(false);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      setLoading(true);
+      setError(null);
+
+      try {
+        const response = await axios.get<DepartmentData[]>("your_api_endpoint");
+        setRowData(response.data);
+      } catch (error) {
+        setError("Error fetching data. Please try again.");
+        console.error("Error fetching data:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchData();
+  }, []);
+
+  // Column definitions matching LsaFfe component
+  const columnDefs: ColDef[] = [
+    { field: "department", flex: 1, headerName: "Department.", filter: "agTextColumnFilter", floatingFilter: true },
+    { field: "subDepartment", flex: 1, headerName: "Sub Department", filter: "agTextColumnFilter", floatingFilter: true },
+    { field: "rank", flex: 1, headerName: "Rank", filter: "agTextColumnFilter", floatingFilter: true },
+    { field: "RankeLevel", flex: 1, headerName: "Rank Level", filter: "agTextColumnFilter", floatingFilter: true },
+    { field: "rankAccessLevel", flex: 1, headerName: "Rank Access Level", filter: "agTextColumnFilter", floatingFilter: true },
+  ];
 
   return (
     <>
-      <div>
-        <div className="d-flex justify-content-end  m-3 align-items-center mx-4">
-          <button 
-            className="btn blue d-flex align-items-center rounded-xl w-54 text-white text-lg font-semibold inter p-3  gap-4 align-items-lg-center" 
-            onClick={() => setShowDetails(true)}
-          >
-            Add Planned Maintenance
-            <img src="./add.png" alt="add.png"/>
-          </button>
-        </div>
-        <div className="bg-light mt-4 rounded-lg h-screen pt-10 pl-10">
-          {sampleTasks.map((task) => (
-            <Task key={task.id} task={task} />
-          ))}
-        </div>
+      {/* Button to open the modal */}
+      <div className="d-flex justify-content-end m-3 align-items-center mx-4">
+        <button
+          className="btn blue d-flex align-items-center rounded-xl w-54 text-white text-lg font-semibold inter p-3 gap-4 align-items-lg-center"
+          onClick={() => setShowDetails(true)}
+        >
+          Add Planned Maintenance
+          <img src="./add.png" alt="add.png" />
+        </button>
       </div>
+      
+      {/* Error message */}
+      {error && <div className="alert alert-danger">{error}</div>}
+
+      {/* Loading Spinner */}
+      {loading ? (
+        <div>Loading tasks...</div>
+      ) : (
+        <div className="ag-theme-quartz mt-3" style={{ height: "500px", width: "100%" }}>
+          <AgGridReact
+            rowData={rowData}
+            columnDefs={columnDefs}
+            pagination={true}
+            paginationPageSize={5}
+            onGridReady={(params) => params.api.sizeColumnsToFit()}
+          />
+        </div>
+      )}
+
+      {/* Modal for additional functionality */}
       <PlanedModel show={showDetails} onHide={() => setShowDetails(false)} />
     </>
   );
-};
+}
 
 export default PlanedMaintenance;
